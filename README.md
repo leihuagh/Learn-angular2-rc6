@@ -5,6 +5,7 @@ angular2-rc6 https://github.com/AcademiaBinaria/angular2-RC6
 -Angular 2 v2.0.0
 -Webpack
 -Webpack-dev-server
+-SASS
 -TypeScript
 -Bootstrap 4.0.0-alpha.4
 -JQuery v3.1.1
