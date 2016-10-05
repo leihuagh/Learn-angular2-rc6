@@ -56,7 +56,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let m of motions">
-            <td class="text-left">{{date(m.date)}} | date: "dd-MM-yyyy"</td>
+            <td class="text-left">{{date(m.date) | date:"yyyy-MM-dd"}}</td>
             <td class="text-left">{{m.type}}</td>
             <td class="text-left">{{m.category}}</td>
             <td class="text-left" [ngClass]="{positive: m.type==='Income', negative: m.type==='Expense'}">{{m.amount | number }} €</td>
