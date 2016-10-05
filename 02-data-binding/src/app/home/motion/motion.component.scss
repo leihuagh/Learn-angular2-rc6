@@ -1,6 +1,11 @@
+@import '../../../style/variables';
 .positivo {
     color: green;
 }
 .negativo {
     color: red;
+}
+
+hr {
+    color: $white;
 }

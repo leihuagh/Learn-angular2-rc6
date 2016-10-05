@@ -1,0 +1,15 @@
+<div>
+    <div>
+        <label for="type">Type: </label>
+        <input type="radio" name="type"
+            [checked]="motion.type==='Income'"
+            (change)="changeType('Income')"
+        > Income
+        <input type="radio" name="type"
+            [checked]="motion.type==='Expense'"
+            (change)="changeType('Expense')"
+        > Expense
+    </div>
+</div>
+<hr>
+<hr>
