@@ -4,7 +4,8 @@ import { Component, OnInit } from '@angular/core';
     selector: 'my-car',
     templateUrl: './car.component.html'
 })
-export class CarComponent implements OnInit{
+export class CarComponent implements OnInit {
     constructor() {}
+
     ngOnInit(): void {}
 }
