@@ -45,4 +45,22 @@
     <button (click)="saveMotion()">Save Motion</button>
 </div>
 <hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th (click)="sortBy('date')">Date</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th (click)="sortBy('amount')">Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let m of motions">
+            <td class="text-left">{{date(m.date)}} | date: "dd-MM-yyyy"</td>
+            <td class="text-left">{{m.type}}</td>
+            <td class="text-left">{{m.category}}</td>
+            <td class="text-left" [ngClass]="{positive: m.type==='Income', negative: m.type==='Expense'}">{{m.amount | number }} €</td>
+        </tr>
+    </tbody>
+</table>
 <hr>
