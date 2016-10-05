@@ -1,0 +1,15 @@
+<h4>I am greeting component within the home module</h4>
+<h1>{{title}}</h1>
+<p>I am able to multiply by {{1 * 2}} your skills</p>
+<form>
+    <div [hidden] = "progressive" >
+        <label>What is your name?</label>
+        <input type="text" name="apprentice" [(ngModel)]="apprentice" >
+        <p>Welcome to Angle 2 {{apprentice}}</p>
+        <button (click)="onGreet()">Greet</button>
+        <p [hidden]="!visible">Hello, {{apprentice}} !!!
+            <button (click)="sayGoodbye()">Move</button>
+        </p>
+    </div>
+    <my-motion [hidden]="!progressive"></my-motion>
+</form>

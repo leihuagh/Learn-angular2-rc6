@@ -1,0 +1,79 @@
+<div>
+    <div>
+        <label for="type">Type: </label>
+        <input type="radio" name="type"
+            [checked]="motion.type==='Income'"
+            (change)="changeType('Income')"
+        > Income
+        <input type="radio" name="type"
+            [checked]="motion.type==='Expense'"
+            (change)="changeType('Expense')"
+        > Expense
+    </div>
+    <p></p>
+    <div>
+        <label for="category">Category: </label>
+        <select 
+            [(ngModel)]="motion.category"
+            *ngIf="motion.type==='Income'"
+        >
+            <option
+                *ngFor="let category of categoryIncomes"
+                [value]="category"
+            >{{category}}</option>
+        </select>
+        <select
+            [(ngModel)]="motion.category"
+            *ngIf="motion.type==='Expense'"
+        >
+            <option
+                *ngFor="let category of categoryExpenses"
+                [value]="category"
+            >{{category}}</option>
+        </select>
+    </div>
+    <p></p>
+    <div>
+        <label for="date">Date: </label>
+        <input type="date" name="date" [(ngModel)]="motion.date">
+    </div>
+    <p></p>
+    <div>
+        <label for="amount">Amount: </label>
+        <input type="number" name="amount" [(ngModel)]="motion.amount">
+    </div>
+    <button (click)="saveMotion()">Save Motion</button>
+</div>
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th (click)="sortBy('date')">Date</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th (click)="sortBy('amount')">Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let m of motions">
+            <td class="text-left">{{date(m.date) | date:"yyyy-MM-dd"}}</td>
+            <td class="text-left">{{m.type}}</td>
+            <td class="text-left">{{m.category}}</td>
+            <td class="text-left" [ngClass]="{positive: m.type==='Income', negative: m.type==='Expense'}">{{m.amount | number }} €</td>
+        </tr>
+    </tbody>
+</table>
+<hr>
+<div class="positive">
+    <span>Income: </span>
+    <span>{{incomes}}</span>
+</div>
+<div class="negative">
+    <span>Expense: </span>
+    <span>{{expenses}}</span>
+</div>
+<p></p>
+<div [ngClass]="{positive: balance >= 0, negative: balance<0}">
+    <span>Balance: </span>
+    <span>{{balance}}</span>
+</div>
