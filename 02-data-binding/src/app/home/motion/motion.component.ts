@@ -7,7 +7,7 @@ import { Motion } from './motion.model';
     styleUrls: ['./motion.component.scss']
 })
 export class MotionComponent implements OnInit {
-    categoryIncome: string[] = ['Payroll', 'Sale', 'Interest', 'Tax'];
+    categoryIncomes: string[] = ['Payroll', 'Sale', 'Interest', 'Tax'];
     categoryExpenses: string[] = ['Mortgage', 'Buy', 'Interest', 'Tax'];
     motion: Motion;
     motions: Motion[] = [];
@@ -21,7 +21,7 @@ export class MotionComponent implements OnInit {
         this.motion = {
             _id: new Date().toDateString(),
             type: 'Income',
-            category: 'Mortgage',
+            category: 'Payroll',
             date: new Date(),
             amount: 0
         };
@@ -32,7 +32,7 @@ export class MotionComponent implements OnInit {
             this.motion.type = 'Income';
             this.motion.category = 'Payroll';
         }else {
-            this.motion.type = 'Expenses';
+            this.motion.type = 'Expense';
             this.motion.category = 'Mortgage';
         }
     }

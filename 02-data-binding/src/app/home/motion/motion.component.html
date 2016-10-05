@@ -10,6 +10,28 @@
             (change)="changeType('Expense')"
         > Expense
     </div>
+    <p></p>
+    <div>
+        <label for="category">Category: </label>
+        <select 
+            [(ngModel)]="motion.category"
+            *ngIf="motion.type==='Income'"
+        >
+            <option
+                *ngFor="let category of categoryIncomes"
+                [value]="category"
+            >{{category}}</option>
+        </select>
+        <select
+            [(ngModel)]="motion.category"
+            *ngIf="motion.type==='Expense'"
+        >
+            <option
+                *ngFor="let category of categoryExpenses"
+                [value]="category"
+            >{{category}}</option>
+        </select>
+    </div>
 </div>
 <hr>
 <hr>
