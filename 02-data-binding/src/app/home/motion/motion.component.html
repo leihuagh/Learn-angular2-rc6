@@ -64,3 +64,16 @@
     </tbody>
 </table>
 <hr>
+<div class="positive">
+    <span>Income: </span>
+    <span>{{incomes}}</span>
+</div>
+<div class="negative">
+    <span>Expense: </span>
+    <span>{{expenses}}</span>
+</div>
+<p></p>
+<div [ngClass]="{positive: balance >= 0, negative: balance<0}">
+    <span>Balance: </span>
+    <span>{{balance}}</span>
+</div>
