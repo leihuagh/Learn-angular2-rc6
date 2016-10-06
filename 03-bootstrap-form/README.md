@@ -1,5 +1,4 @@
-# Modularization
+# Applied Bootstrap 4 for form layouts
 
-Since angular 2 rc5, angular 2 enhanced itself in the functionality of modularization
+http://v4-alpha.getbootstrap.com/components/forms/#form-controls
 
-## Guide
