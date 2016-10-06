@@ -6,15 +6,13 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { CarModule } from './car/car.module';
-import { PSAModule } from './psa/psa.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HomeModule,
-    CarModule,
-    PSAModule
+    CarModule
   ],
   declarations: [
     AppComponent

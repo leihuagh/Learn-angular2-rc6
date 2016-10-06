@@ -1,7 +1,11 @@
-<h4>I am greeting component within the home module</h4>
 <h1>{{title}}</h1>
-<p>I am able to multiply by {{1 * 2}} your skills</p>
 <form>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      </div>
+    </div>
     <div [hidden] = "progressive" >
         <label>What is your name?</label>
         <input type="text" name="apprentice" [(ngModel)]="apprentice" >
