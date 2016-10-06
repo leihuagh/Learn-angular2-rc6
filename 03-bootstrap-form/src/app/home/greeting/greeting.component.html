@@ -1,14 +1,17 @@
 <h1>{{title}}</h1>
-<form>
-    <div class="form-group row">
-        <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-      </div>
-    </div>
+<form class="form-inline">    
     <div [hidden] = "progressive" >
-        <label>What is your name?</label>
-        <input type="text" name="apprentice" [(ngModel)]="apprentice" >
+        <div class="form-group row">
+            <label for="apprentice" class="col-sm-6 col-form-label col-form-label-sm">What is your name?</label>
+            <div class="col-sm-6">
+                <input type="text" 
+                class="form-control form-control-sm"
+                name="apprentice" 
+                id="apprentice"
+                [(ngModel)]="apprentice"
+                >
+            </div>
+        </div>        
         <p>Welcome to Angle 2 {{apprentice}}</p>
         <button (click)="onGreet()">Greet</button>
         <p [hidden]="!visible">Hello, {{apprentice}} !!!
