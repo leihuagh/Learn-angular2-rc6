@@ -1,9 +1,9 @@
 <h1>{{title}}</h1>
-<form class="form-inline">    
+<form>    
     <div [hidden] = "progressive" >
-        <div class="form-group row">
-            <label for="apprentice" class="col-sm-6 col-form-label col-form-label-sm">What is your name?</label>
-            <div class="col-sm-6">
+        <div class="form-group row inline">
+            <label for="apprentice" class="col-sm-3 col-form-label col-form-label-sm">What is your name?</label>
+            <div class="col-sm-4">
                 <input type="text" 
                 class="form-control form-control-sm"
                 name="apprentice" 
@@ -11,12 +11,19 @@
                 [(ngModel)]="apprentice"
                 >
             </div>
-        </div>        
-        <p>Welcome to Angle 2 {{apprentice}}</p>
-        <button (click)="onGreet()">Greet</button>
-        <p [hidden]="!visible">Hello, {{apprentice}} !!!
-            <button (click)="sayGoodbye()">Move</button>
-        </p>
+        </div>  
+        <div class="form-group row">
+            <label for="greeting" class="col-sm-3 col-form-label col-form-label-sm">Welcome to Angle 2 {{apprentice}}</label>
+            <div class="col-sm-4">
+                <button (click)="onGreet()" class="btn btn-primary form-control-sm" id="greeting">Greet</button>
+            </div>     
+        </div>   
+        <div [hidden]="!visible" class="form-group row">
+            <label for="move" class="col-sm-3 col-form-label col-form-label-sm">Hello, {{apprentice}} !!!</label>
+            <div class="col-sm-4">
+                <button (click)="sayGoodbye()" class="btn btn-success form-control-sm" id="move">Move</button>
+            </div>    
+        </div> 
     </div>
     <my-motion [hidden]="!progressive"></my-motion>
 </form>
