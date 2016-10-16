@@ -16,7 +16,7 @@ export class GreetingComponent implements OnInit {
     }
 
     sayGoodbye(): void {
-        this.visible = false;
+        this.visible = true;
         this.progressive = true;
         this.title = 'Start the motion!!!';
     }
